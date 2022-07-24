@@ -14,9 +14,9 @@
 
 @media (min-width: 481px) and (max-width: 767px) {
     .logo-wrap {
-        width: 210px;
+        width: 170px;
         position: fixed;
-        top: 0px;
+        top: 5px;
         left: 0px;
         z-index: 999;
     }
@@ -24,9 +24,9 @@
 
 @media (min-width: 265px) and (max-width: 480px) {
     .logo-wrap {
-        width: 200px;
+        width: 170px;
         position: fixed;
-        top: 0px;
+        top: 5px;
         left: 0px;
         z-index: 999;
     }

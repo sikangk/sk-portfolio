@@ -30,7 +30,7 @@ function App() {
     <>
       <img className='logo-wrap' src={require('./design/img/sk-portfolio.png')} />
       <div style={{ position: 'fixed', right: '5px', top: '5px' }}>
-        <span className='main-text' style={{fontSize: '13px'}}>Copyright 2022.곽시강 all rights reserved.</span>
+        <span className='main-text' style={{fontSize: '10px'}}>Copyright 2022.곽시강 all rights reserved.</span>
       </div>
       <video
         muted autoPlay loop
