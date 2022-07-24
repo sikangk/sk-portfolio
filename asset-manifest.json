@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/sk-portfolio/static/css/main.d332d007.css",
+    "main.js": "/sk-portfolio/static/js/main.d66d2021.js",
+    "static/js/787.0d74c73b.chunk.js": "/sk-portfolio/static/js/787.0d74c73b.chunk.js",
+    "static/media/GmarketSansTTFBold.ttf": "/sk-portfolio/static/media/GmarketSansTTFBold.69428064ef8eee25be33.ttf",
+    "static/media/GmarketSansTTFMedium.ttf": "/sk-portfolio/static/media/GmarketSansTTFMedium.d4bac6b182bed73c9375.ttf",
+    "static/media/GmarketSansTTFLight.ttf": "/sk-portfolio/static/media/GmarketSansTTFLight.efaa8f19ead1555b1c39.ttf",
+    "static/media/travel-bus.png": "/sk-portfolio/static/media/travel-bus.4037d77b50534cede39e.png",
+    "static/media/selling.png": "/sk-portfolio/static/media/selling.4d866961519443f87a4b.png",
+    "static/media/sikang-photo.jpeg": "/sk-portfolio/static/media/sikang-photo.8a808f936902da162d37.jpeg",
+    "static/media/korea-investment.png": "/sk-portfolio/static/media/korea-investment.c9919e433b7e64a0556c.png",
+    "static/media/sk-portfolio.png": "/sk-portfolio/static/media/sk-portfolio.ef27ac7b151aa74f4863.png",
+    "static/media/babygo-store.png": "/sk-portfolio/static/media/babygo-store.b1dba5fb19786494bcd6.png",
+    "static/media/babygo.png": "/sk-portfolio/static/media/babygo.a4ffb5e7e8e65a96ff57.png",
+    "static/media/pickup.png": "/sk-portfolio/static/media/pickup.51b5bd4430024157315c.png",
+    "index.html": "/sk-portfolio/index.html",
+    "main.d332d007.css.map": "/sk-portfolio/static/css/main.d332d007.css.map",
+    "main.d66d2021.js.map": "/sk-portfolio/static/js/main.d66d2021.js.map",
+    "787.0d74c73b.chunk.js.map": "/sk-portfolio/static/js/787.0d74c73b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d332d007.css",
+    "static/js/main.d66d2021.js"
+  ]
+}
