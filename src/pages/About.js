@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useMemo} from 'react';
 import '../design/css/about.css';
 import '../design/css/about.device.css';
 import AnimatedText from 'react-animated-text-content';
@@ -36,7 +36,7 @@ const About = () => {
                             ease: 'ease-in-out',
                         }}
                         animationType="float"
-                        interval={0.06}
+                        // interval={0.06}
                         duration={0.8}
                         tag="span"
                         className="animated-paragraph"
@@ -56,7 +56,7 @@ const About = () => {
                             ease: 'ease-in-out',
                         }}
                         animationType="float"
-                        interval={0.06}
+                        // interval={0.06}
                         duration={0.8}
                         tag="span"
                         className="animated-paragraph"
@@ -79,7 +79,7 @@ const About = () => {
                             ease: 'ease-in-out',
                         }}
                         animationType="float"
-                        interval={0.06}
+                        // interval={0.06}
                         duration={0.8}
                         tag="span"
                         className="animated-paragraph"
@@ -102,7 +102,7 @@ const About = () => {
                             ease: 'ease-in-out',
                         }}
                         animationType="float"
-                        interval={0.06}
+                        // interval={0.06}
                         duration={0.8}
                         tag="span"
                         className="animated-paragraph"
@@ -125,7 +125,7 @@ const About = () => {
                             ease: 'ease-in-out',
                         }}
                         animationType="float"
-                        interval={0.06}
+                        // interval={0.06}
                         duration={0.8}
                         tag="span"
                         className="animated-paragraph"
@@ -145,4 +145,4 @@ const About = () => {
     );
 }
 
-export default About;
+export default React.memo(About);
