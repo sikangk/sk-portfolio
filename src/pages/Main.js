@@ -1,19 +1,23 @@
 import React from 'react';
-//#1488CC
-//#2b5876
+import Typing from 'react-typing-animation';
+import '../design/css/main.css';
+
 const Main = () => {
     return (
-        <div
-            style={{
-                height: '100vh',
-                backgroundColor: '#1488CC',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-            }}
+        <section
+            className='main-wrapper'
+
         >
-            Main
-        </div>
+            <Typing speed={50}>
+                <h1
+                    className='main-text'
+                >제 얘기가 궁금하신가요 ?</h1>
+                <h1
+                    className='main-text'
+                >스크롤을 내려주세요 !</h1>
+
+            </Typing>
+        </section>
     );
 }
 

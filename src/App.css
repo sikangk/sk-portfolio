@@ -17,3 +17,18 @@ body{
     height: 5px;
     background-color: gray;
   }
+
+@font-face {
+    font-family: "Gmarket-sans-bold";
+    src: url('./design/fonts/GmarketSansTTFBold.ttf');
+}
+
+@font-face {
+    font-family: "Gmarket-sans-medium";
+    src: url('./design/fonts/GmarketSansTTFMedium.ttf');
+}
+
+@font-face {
+    font-family: "Gmarket-sans-light";
+    src: url('./design/fonts/GmarketSansTTFLight.ttf');
+}

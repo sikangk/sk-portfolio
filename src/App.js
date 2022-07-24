@@ -4,39 +4,66 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Main from './pages/Main';
 import Portfolio from './pages/Portfolio';
-import { FullPage, Slide } from 'react-full-page';
 import Dot from './components/Dot';
+import ReactPageScroller from 'react-page-scroller';
 
 
 function App() {
-  const [pageState, setPageState] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const handlePageChange = useCallback((number) => {
+    // setTimeout(() => {
+    //     setCurrentPage(number);
+    // }, 800);
+    setCurrentPage(number);
+
+  }, [currentPage])
+
+  const scrollPageChange = useCallback((number) => {
+    setCurrentPage(number);
+
+  }, [currentPage])
 
   return (
-    <FullPage
-      //initialSlide={pageState}
-      duration={1500}
-      //controlProps={(o) => console.log(o)}
-      //nextChange={(i) => console.log(i, 'next')}
-      beforeChange={(o) => setPageState(o.to)}
-    >
-      <Slide>
-        <Main />
-      </Slide>
-      <Slide>
-        <About />
-      </Slide>
-      <Slide>
-        <Portfolio />
-      </Slide>
-      <Slide>
-        <Contact />
-      </Slide>
-      <div style={{ position: 'fixed', top: 50, left: 70 }}>
-        <h1>sk PortFolio</h1>
-      </div>
-      {pageState > 0 && <Dot pageState={pageState} />}
-    </FullPage>
+    <>
+      <img src={require('./design/img/sk-portfolio.png')}
+        style={{
+          width: 300,
+          position: 'fixed',
+          top: 10,
+          left: 5,
+          zIndex: 999
+        }} />
+      <video
+        muted autoPlay loop
+        style=
+        {{
+          position: 'absolute',
+          width: '100%',
+          height: '100vh',
+          top: 0,
+          left: 0,
+          zIndex: -5,
+          objectFit: 'cover'
+        }}
+        src='https://cdn.videvo.net/videvo_files/video/free/2016-04/large_watermarked/160330_4_Typing3_Mpeg4_4K_preview.mp4'
+      >
 
+      </video>
+      <ReactPageScroller
+        animationTimer={1200}
+        animationTimerBuffer={200}
+        renderAllPagesOnFirstRender={true}
+        goToPage={handlePageChange}
+        pageOnChange={scrollPageChange}
+        customPageNumber={currentPage}
+      >
+        <Main />
+        <About />
+        <Portfolio />
+        <Contact />
+      </ReactPageScroller>
+    </>
   );
 }
 
