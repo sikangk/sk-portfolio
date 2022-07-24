@@ -93,6 +93,7 @@ const Portfolio = ({ setBlockScroll }) => {
                     slidesPerView={4}
                     spaceBetween={30}
                     centeredSlides={true}
+                    allowTouchMove={false}
                     // grabCursor={true}
                     pagination={{
                         clickable: true,
