@@ -1,0 +1,33 @@
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+    .content-photo-wrap {
+        width: 250px;
+        height: 250px;
+        border-radius: 300px;
+    }
+
+
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .content-photo-wrap {
+        width: 200px;
+        height: 200px;
+        border-radius: 300px;
+    }
+    span{
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 265px) and (max-width: 480px) {
+    .content-photo-wrap {
+        width: 150px;
+        height: 150px;
+        border-radius: 300px;
+    }
+    span{
+        font-size: 18px;
+    }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import Typing from 'react-typing-animation';
 import '../design/css/main.css';
+import '../design/css/main.device.css';
 
 const Main = () => {
     return (

@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import "./App.css";
+import "./App.device.css";
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Main from './pages/Main';
@@ -10,6 +11,7 @@ import ReactPageScroller from 'react-page-scroller';
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
+  const [blockScroll, setBlockScroll] = useState(false);
 
   const handlePageChange = useCallback((number) => {
     // setTimeout(() => {
@@ -26,14 +28,7 @@ function App() {
 
   return (
     <>
-      <img src={require('./design/img/sk-portfolio.png')}
-        style={{
-          width: 300,
-          position: 'fixed',
-          top: 10,
-          left: 5,
-          zIndex: 999
-        }} />
+      <img className='logo-wrap' src={require('./design/img/sk-portfolio.png')} />
       <video
         muted autoPlay loop
         style=
@@ -57,10 +52,12 @@ function App() {
         goToPage={handlePageChange}
         pageOnChange={scrollPageChange}
         customPageNumber={currentPage}
+        blockScrollDown={blockScroll}
+        blockScrollUp={blockScroll}
       >
         <Main />
         <About />
-        <Portfolio />
+        <Portfolio setBlockScroll={setBlockScroll} />
         <Contact />
       </ReactPageScroller>
     </>

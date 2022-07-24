@@ -1,0 +1,40 @@
+@media (min-width: 768px) and (max-width: 1024px) {
+    .main-wrapper {
+
+        font-size: 25px;
+
+    }
+
+    .sub-text{
+        font-size: 22px;
+    }
+
+
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .main-wrapper {
+
+        font-size: 20px;
+
+    }
+
+    .sub-text{
+        font-size: 17px;
+    }
+
+
+}
+
+@media (min-width: 265px) and (max-width: 480px) {
+    .main-wrapper {
+
+        font-size: 18px;
+
+    }
+
+    .sub-text{
+        font-size: 15px;
+    }
+
+}

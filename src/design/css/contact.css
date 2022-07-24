@@ -1,0 +1,22 @@
+h3,h5 {
+    padding: 0;
+    margin: 0;
+    font-family: "Gmarket-sans-medium";
+}
+
+section {
+    padding: 0;
+    margin: 0;
+}
+
+.main-text {
+    color: white;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    font-family: "Gmarket-sans-bold";
+}
+
+.sub-text {
+    color: white;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    font-family: "Gmarket-sans-bold";
+}

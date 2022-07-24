@@ -1,0 +1,55 @@
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .portfolio-wrapper {
+
+        font-size: 25px;
+
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .seprator {
+        height: 18px;
+      }
+
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .portfolio-wrapper {
+
+        font-size: 20px;
+
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .skill-wrap{
+        font-size: 14px;
+    }
+
+    .seprator {
+        height: 15px;
+      }
+
+}
+
+@media (min-width: 265px) and (max-width: 480px) {
+    .portfolio-wrapper {
+
+        font-size: 18px;
+
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .seprator {
+        height: 12px;
+      }
+
+}
