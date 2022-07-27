@@ -33,7 +33,8 @@ function App() {
         <span className='main-text' style={{ fontSize: '10px' }}>Copyright 2022.곽시강 all rights reserved.</span>
       </div>
       <video
-        autoPlay loop muted 
+        autoPlay loop muted
+        playsInline
         style=
         {{
           position: 'absolute',
