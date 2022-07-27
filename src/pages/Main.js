@@ -9,7 +9,7 @@ import Radium, { StyleRoot } from 'radium';
 
 const styles = {
     bounce: {
-        animation: 'x 1s infinite',
+        animation: 'x 2s infinite',
         animationName: Radium.keyframes(bounce, 'bounce'),
         display: 'flex',
         flexDirection: 'column',
