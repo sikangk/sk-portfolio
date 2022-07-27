@@ -105,8 +105,10 @@ const Portfolio = ({ setBlockScroll }) => {
                         cursor: 'pointer',
                         display: 'flex',
                         justifyContent: 'center',
-                        alignItems: 'center'
-                    }}><ArrowBackIosNewIcon />이전</div>
+                        alignItems: 'center',
+                        color: 'black',
+                        // textShadow: '-1px 0 #000, 0 2px #000, 1px 0 #000, 0 -1px #000',
+                    }}><ArrowBackIosNewIcon fontSize='large'/></div>
                 <div ref={nextRef}
                     style={{
                         position: 'absolute',
@@ -117,8 +119,10 @@ const Portfolio = ({ setBlockScroll }) => {
                         cursor: 'pointer',
                         display: 'flex',
                         justifyContent: 'center',
-                        alignItems: 'center'
-                    }}>다음<ArrowForwardIosIcon /></div>
+                        alignItems: 'center',
+                        color: 'black',
+                        // textShadow: '-1px 0 #000, 0 2px #000, 1px 0 #000, 0 -1px #000',
+                    }}><ArrowForwardIosIcon fontSize='large'/></div>
                 <div style={{ width: '80%', }}>
                     <Swiper
                         slidesPerView={4}
@@ -175,9 +179,6 @@ const Portfolio = ({ setBlockScroll }) => {
                                 if (contentSplit.length % 2 === 1) {
                                     contentSplit.push(['']);
                                 }
-
-                                console.log(contentSplit, 'contentSpliut');
-                                console.log(contentSplit.length, 'contentSplit.length');
 
                                 return (
                                     <SwiperSlide
