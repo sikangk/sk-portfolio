@@ -189,9 +189,9 @@ const Portfolio = ({ setBlockScroll }) => {
                                         key={index}
                                         style={{ display: 'flex', flexDirection: 'column' }}
                                     >
-                                        <div style={{ height: 30 }} />
+                                        <div className='seprator' />
                                         <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '5%' }}>
-                                            <h5 >클릭해서 자세히보기</h5>
+                                            <h5>클릭해서 자세히보기</h5>
                                         </div>
                                         <div className='content-wrap'>
                                             <section className='img-wrap'>
