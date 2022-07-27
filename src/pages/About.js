@@ -18,7 +18,7 @@ const About = () => {
                     padding: 20,
                     color: 'white',
                     fontWeight: 'bold',
-                    textShadow: '-2px 0 #255,0 2px #255,2px 0 #255,0 -2px #255',
+                    textShadow: '-1px 0 #255,0 1px #255,1px 0 #255,0 -1px #255',
                     borderRadius: 20
                 }}>
 

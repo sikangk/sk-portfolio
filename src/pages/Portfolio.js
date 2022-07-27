@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../design/css/portfolio.css';
 import '../design/css/portfolio.device.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,7 +12,10 @@ import SwiperCore, {
 // import "swiper/components/navigation/navigation.min.css"//스와이퍼용 css
 import "swiper/css";
 import "swiper/css/pagination";
+import 'swiper/css/navigation';
 import ModalComponent from '../components/Modal';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
@@ -56,7 +59,7 @@ const portfolioArr = [
     {
         title: '여행버스 웹',
         skill: 'TypeScript,JavaScript,React,Next-js,Redux',
-        content: 'Next-js 와 React를 이용해 제작한 여행버스 웹사이트 입니다. 프론트엔드르 담당하였으며, 서버사이드렌더링의 장점을 알게된 프로젝트 입니다.',
+        content: 'Next-js 를 이용해 제작한 여행버스 웹사이트 입니다. 프론트엔드르 담당하였으며, 서버사이드렌더링의 장점을 알게된 프로젝트 입니다.',
         image: require('../design/img/travel-bus.png'),
         link: 'https://www.travelbustv.com/main'
     }
@@ -65,6 +68,9 @@ const portfolioArr = [
 const Portfolio = ({ setBlockScroll }) => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [projectItemInfo, setProjectItemInfo] = useState({});
+
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
 
     useEffect(() => {
         if (modalIsOpen) {
@@ -89,75 +95,131 @@ const Portfolio = ({ setBlockScroll }) => {
 
             <div className='portfolio-wrapper-content'>
                 <h1 className='main-text'>PROJECTS</h1>
-                <Swiper
-                    slidesPerView={4}
-                    spaceBetween={30}
-                    centeredSlides={true}
-                    allowTouchMove={false}
-                    // grabCursor={true}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    modules={[Pagination]}
-                    className="mySwiper"
-                    breakpoints={{
-                        0: {
-                            slidesPerView: 1,
-                            spaceBetween: 15,
-                            centeredSlides: true,
-                        },
-                        500: {
-                            slidesPerView: 2,
-                            spaceBetween: 20,
-                            centeredSlides: true,
-                        },
-                        1024: {
-                            slidesPerView: 4,
-                            spaceBetween: 30,
-                            centeredSlides: true,
+                <div ref={prevRef}
+                    style={{
+                        position: 'absolute',
+                        left: 0,
+                        top: '50%',
+                        width: 100,
+                        zIndex: 100,
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}><ArrowBackIosNewIcon />이전</div>
+                <div ref={nextRef}
+                    style={{
+                        position: 'absolute',
+                        right: 0,
+                        top: '50%',
+                        width: 100,
+                        zIndex: 100,
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>다음<ArrowForwardIosIcon /></div>
+                <div style={{ width: '80%', }}>
+                    <Swiper
+                        slidesPerView={4}
+                        spaceBetween={30}
+                        centeredSlides={true}
+                        // centeredSlidesBounds
+                        allowTouchMove={false}
+                        // grabCursor={true}
+                        draggable={false}
+                        pagination={{
+                            clickable: true,
+                        }}
+
+                        onInit={(swiper) => {
+                            swiper.params.navigation.prevEl = prevRef.current;
+                            swiper.params.navigation.nextEl = nextRef.current;
+                            swiper.navigation.init();
+                            swiper.navigation.update();
+                        }}
+
+                        // navigation={true}
+                        modules={[Pagination, Navigation]}
+                        className="mySwiper"
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1,
+                                spaceBetween: 15,
+                                centeredSlides: true,
+                            },
+                            500: {
+                                slidesPerView: 2,
+                                spaceBetween: 20,
+                                centeredSlides: true,
+                            },
+                            1024: {
+                                slidesPerView: 3,
+                                spaceBetween: 30,
+                                centeredSlides: true,
+                            }
+
+
+                        }}
+                    >
+
+
+
+                        {
+                            portfolioArr.map((item, index) => {
+
+                                const contentSplit = item.skill.split(',');
+
+
+
+                                if (contentSplit.length % 2 === 1) {
+                                    contentSplit.push(['']);
+                                }
+
+                                console.log(contentSplit, 'contentSpliut');
+                                console.log(contentSplit.length, 'contentSplit.length');
+
+                                return (
+                                    <SwiperSlide
+                                        onClick={() => {
+                                            setProjectItemInfo(item);
+                                            openModal();
+                                        }}
+                                        key={index}
+                                        style={{ display: 'flex', flexDirection: 'column' }}
+                                    >
+                                        <div style={{ height: 30 }} />
+                                        <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '5%' }}>
+                                            <h5 >클릭해서 자세히보기</h5>
+                                        </div>
+                                        <div className='content-wrap'>
+                                            <section className='img-wrap'>
+                                                <img style={{ width: '80%', height: 250 }} src={item.image} />
+                                            </section>
+                                            <div className='seprator' />
+                                            <section classNmae='title-wrap'>
+                                                <h3>[{item.title}]</h3>
+                                            </section>
+                                            <section className='skill-wrap'>
+                                                <div style={{ height: 10 }} />
+                                                <h5>Skills</h5>
+                                                <div className='seprator' />
+                                                <div style={{ width: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly', borderTop: '1px solid #bdbdbd' }}>
+                                                    {contentSplit.map((item, index) => {
+                                                        return <div style={{ width: '45%', marginTop: 5 }} key={index}>{item}</div>
+                                                    })}
+                                                </div>
+                                            </section>
+                                            <div style={{ height: 50 }} />
+                                        </div>
+                                    </SwiperSlide>
+                                )
+                            })
                         }
 
 
-                    }}
-                >
-
-                    {
-                        portfolioArr.map((item, index) => {
-
-                            const contentSplit = item.skill.split(',');
-
-                            return (
-                                <SwiperSlide
-                                    onClick={() => {
-                                        setProjectItemInfo(item);
-                                        openModal();
-                                    }}
-                                    key={index}
-                                    style={{ display: 'flex', flexDirection: 'column' }}
-                                >
-                                    <h5 className='seprator'>클릭해서 자세히보기</h5>
-                                    <div className='content-wrap'>
-                                        <section className='ima-wrap'>
-                                            <img style={{ width: 200 }} src={item.image} />
-                                        </section>
-                                        <div className='seprator' />
-                                        <section>
-                                            <h3>[{item.title}]</h3>
-                                        </section>
-                                        <section className='skill-wrap'>
-                                            <div style={{ height: 10 }} />
-                                            <h5>사용한 기술</h5>
-                                            <div>{contentSplit.map((item, index) => {
-                                                return <div key={index}>{item}</div>
-                                            })}
-                                            </div>
-                                        </section>
-                                    </div>
-                                </SwiperSlide>
-                            )
-                        })
-                    }
-                </Swiper>
+                    </Swiper>
+                </div>
 
             </div>
             <ModalComponent isOpen={modalIsOpen} onRequestClose={closeModal} projectItemInfo={projectItemInfo} />

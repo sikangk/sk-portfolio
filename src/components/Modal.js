@@ -5,7 +5,8 @@ import '../design/css/modal.device.css';
 const customStyles = {
 
     overlay: {
-        backgroundColor: 'rgba(0,0,0,0.8)'
+        backgroundColor: 'rgba(0,0,0,0.8)',
+        zIndex: 5,
     },
     content: {
         width: '80%',
@@ -15,7 +16,7 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-
+        zIndex: 5,
     },
 };
 

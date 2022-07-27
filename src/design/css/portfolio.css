@@ -23,12 +23,16 @@ section {
 .portfolio-wrapper-content {
   width: 90%;
   height: 90vh;
-  /* background-color: rgba(255, 255, 255, 0.7); */
-  border-radius: 5%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 2%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  position: relative;
+  padding-bottom: 20px;
+  z-index: 1;
+
 }
 
 .main-text {
@@ -40,6 +44,7 @@ section {
 .swiper {
   width: 100%;
   height: 100%;
+  position: relative !important;
 }
 
 .swiper-pagination {
@@ -60,6 +65,7 @@ section {
   cursor: pointer;
   transition: 800ms ease all;
   outline: none;
+  border-radius: 10px;
 
   /* Center slide text vertically */
   display: -webkit-box;
@@ -85,10 +91,11 @@ section {
   height: 100%;
   object-fit: cover;
   z-index: -999;
+  height: 60%;
 }
 
 .content-wrap {
-
+  height: 95%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -96,6 +103,15 @@ section {
   margin: 0;
   padding: 0;
   z-index: -555;
+}
+
+.title-wrap {
+  height: 10%;
+}
+
+.skill-wrap {
+  width: 100%;
+  height: 30%;
 }
 
 /* .swiper-slide:hover {

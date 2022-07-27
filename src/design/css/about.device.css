@@ -12,6 +12,7 @@
 
 @media (min-width: 481px) and (max-width: 767px) {
     .content-photo-wrap {
+        margin-top: 40px;
         width: 200px;
         height: 200px;
         border-radius: 300px;
@@ -23,6 +24,7 @@
 
 @media (min-width: 265px) and (max-width: 480px) {
     .content-photo-wrap {
+        margin-top: 50px;
         width: 150px;
         height: 150px;
         border-radius: 300px;
